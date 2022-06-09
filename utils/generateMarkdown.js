@@ -28,6 +28,15 @@ function renderLicenseSection(license) {
     }
 }
 
+function renderLicenseTOC(license) {
+  if (license !== 'no license') {
+  return `
+  * [License](#license)`;
+  } else {
+    return ' ';
+  }
+ }
+
 function generateMarkdown(data) {
 
   return `# ${data.title}
@@ -61,7 +70,9 @@ function generateMarkdown(data) {
   ## [Questions](#table-of-contents)
 
   If you have any questions about this project, please contact me using the following links:
+
   [GitHub](https://github.com/${data.github})
+
   [Email: ${data.email}](mailto:${data.email})
 `;
 }
