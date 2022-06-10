@@ -1,3 +1,4 @@
+// Function to render license badge
 function renderLicenseBadge(license) {
   if (license !== 'no license') {
     return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
@@ -6,7 +7,7 @@ function renderLicenseBadge(license) {
     }
   } 
 
-
+// Function to render license link
 function renderLicenseLink(license) {
   if (license !== 'no license') {
     return `[${license}](https://choosealicense.com/licenses/${license})`;
@@ -15,7 +16,7 @@ function renderLicenseLink(license) {
     }
 }
 
-
+// Function to render license section
 function renderLicenseSection(license) {
   if (license !== 'no license') {
     return `
@@ -28,15 +29,7 @@ function renderLicenseSection(license) {
     }
 }
 
-function renderLicenseTOC(license) {
-  if (license !== 'no license') {
-  return `
-  * [License](#license)`;
-  } else {
-    return ' ';
-  }
- }
-
+// Funtion to generate README markdown
 function generateMarkdown(data) {
 
   return `# ${data.title}
@@ -47,9 +40,9 @@ function generateMarkdown(data) {
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
-  ${renderLicenseTOC(data.license)}
   * [Contributing](#contributing)
   * [Tests](#tests)
+  * [License](#license)
   * [Questions](#questions)
 
   ## [Description](#table-of-contents) 
@@ -67,6 +60,9 @@ function generateMarkdown(data) {
   ## [Tests](#table-of-contents)
   ${data.test}
 
+  ## [License](#table-of-contents)
+  ${renderLicenseBadge(data.license)}
+  
   ## [Questions](#table-of-contents)
 
   If you have any questions about this project, please contact me using the following links:
@@ -77,4 +73,5 @@ function generateMarkdown(data) {
 `;
 }
 
+// Allows index to import markdown
 module.exports = generateMarkdown;
