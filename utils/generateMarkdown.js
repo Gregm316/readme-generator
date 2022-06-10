@@ -49,7 +49,7 @@ function generateMarkdown(data) {
   ${data.description}
 
   ## [Installation](#table-of-contents) 
-  ${data.install}
+  ${data.installation}
   
   ## [Usage](#table-of-contents) 
   ${data.usage}
@@ -58,7 +58,7 @@ function generateMarkdown(data) {
   ${data.contributing}
 
   ## [Tests](#table-of-contents)
-  ${data.test}
+  ${data.tests}
 
   ## [License](#table-of-contents)
   ${renderLicenseBadge(data.license)}
